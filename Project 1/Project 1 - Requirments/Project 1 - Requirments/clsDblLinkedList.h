@@ -9,7 +9,7 @@ template <class T>
 class clsDblLinkedList 
 {
 private:
-	int _Size;
+	int _Size = 0;
 public:
 
 	class Node {
@@ -163,5 +163,13 @@ public:
 		}
 		cout << "\n";
 	}
+
+	bool IsEmpty() {
+		return (_Size == 0 ? true : false);
+	}
+
+
+
+
 };
 

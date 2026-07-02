@@ -17,6 +17,13 @@ int main() {
 
 	cout << "\nNumber of Items in the Linked List = " << MydblLinkedList.Size();
 
+	if (MydblLinkedList.IsEmpty()) {
+		cout << "No\n";
+	}
+	else {
+		cout << "yes\n";
+	}
+
 	system("pause>0");
 	return 0;
 }
