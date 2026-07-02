@@ -15,7 +15,7 @@ int main() {
 	cout << "\nLinked List Content: \n";
 	MydblLinkedList.PrintNodes();
 
-	cout << "\nExeusting Reverse: \n";
+	cout << "\nExecuting Reverse:\n";
 	MydblLinkedList.Reverse();
 	MydblLinkedList.PrintNodes();
 
