@@ -15,9 +15,7 @@ int main() {
 	cout << "\nLinked List Content: \n";
 	MydblLinkedList.PrintNodes();
 
-	clsDblLinkedList <int> ::Node* N;
-	N = MydblLinkedList.GetNode(3);
-	cout << "\nValue is :" << N->value;
+	cout << "\nValue is :" << MydblLinkedList.GetItem(4);
 
 	system("pause>0");
 	return 0;
