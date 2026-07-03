@@ -187,6 +187,24 @@ public:
 		head = temp->prev;
 	}
 	
+	Node* GetNode(int index) {
+
+		if (index > (_Size - 1) || index < 0)
+			return NULL;
+
+		int Counter = 0;
+		Node* Current = head;
+		while (Current != NULL && (Current->next != NULL)) {
+
+			if (Counter == index)
+				break;
+
+			Current = Current->next;
+			Counter++;
+		}
+		
+		return Current;
+	}
 
 };
 
