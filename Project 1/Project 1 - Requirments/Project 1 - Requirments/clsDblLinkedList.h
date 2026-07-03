@@ -225,6 +225,16 @@ public:
 		}
 		return false;
 	}
+	
+	bool InsertAfter(int index, T value) {
+		Node* prev_Node = GetNode(index);
+		if (prev_Node != NULL) {
+			InsertAfter(prev_Node, value);
+			return true;
+		}
+		return false;
+
+	}
 
 };
 
