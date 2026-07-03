@@ -15,8 +15,9 @@ int main() {
 	cout << "\nLinked List Content: \n";
 	MydblLinkedList.PrintNodes();
 
-	cout << "\nValue is :" << MydblLinkedList.GetItem(4);
-
+	MydblLinkedList.UpdateItem(2, 500);
+	cout << "\nAfter Updating item (2)\n";
+	MydblLinkedList.PrintNodes();
 	system("pause>0");
 	return 0;
 }
