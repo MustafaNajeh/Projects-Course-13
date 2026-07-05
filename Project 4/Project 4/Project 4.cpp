@@ -17,8 +17,17 @@ int main()
 	MyDynamicArray.PrintList();
 
 
+	MyDynamicArray.Resize(1);
+	cout << "\n\nArray Size : " << MyDynamicArray.Size();
+	cout << "\n\nArray Items :\n";
+	MyDynamicArray.PrintList();
+
+	MyDynamicArray.Resize(5);
+	cout << "\n\nArray Size : " << MyDynamicArray.Size();
+	cout << "\n\nArray Items :\n";
+	MyDynamicArray.PrintList();
 
 	system("pause>0");
-	return 0;
+ 	return 0;
 }
 
