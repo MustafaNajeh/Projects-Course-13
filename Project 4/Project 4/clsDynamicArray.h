@@ -101,12 +101,45 @@ public:
 	}
 
 	void clear() {
-		_Size = 0;
+		
 		//_TempArray = new T[0];
 		delete[] OriginalArray;
+		OriginalArray = nullptr;
+		_Size = 0;
 		//OriginalArray = _TempArray;
+		
+		//ما فائدة التيمبلت الثانية ؟؟
 	}
 
+	bool DeleteItemAt(int index) {
+		if (index < 0 || index >= _Size) {
+			return false;
+		}
+		_Size--;
+		_TempArray = new T[_Size];
+
+		for (int i = 0; i < index; i++) {
+			_TempArray[i] = OriginalArray[i];
+		}
+
+		for (int i = index + 1; i < _Size+1; i++) {
+			_TempArray[i-1] = OriginalArray[i];
+		}
+		/*for (int i = 0; i < _Size; i++) {
+			if (i != index && i != (index + 1)) {
+				_TempArray[i] = OriginalArray[i];
+			}
+			else {
+				int counter = (i) + 1;
+				_TempArray[i] = OriginalArray[counter];
+			}
+		}
+		_Size--;*/
+
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+		return true;
+	}
 
 };
 
