@@ -15,12 +15,16 @@ int main()
 	cout << "Is Empty ? : " << MyDynamicArray.IsEmpty();
 	cout << "\nArray Size : " << MyDynamicArray.Size();
 	cout << "\n\nArray Items :\n";
-
 	MyDynamicArray.PrintList();
 
-	MyDynamicArray.DeleteItemAt(2);
+	MyDynamicArray.DeleteLastIndex();
 	cout << "\nArray Size : " << MyDynamicArray.Size();
-	cout << "\n\nArray Items After delete item(2) :\n";
+	cout << "\ndelete Last index :\n";
+	MyDynamicArray.PrintList();
+
+	MyDynamicArray.DeleteFirstIndex();
+	cout << "\nArray Size : " << MyDynamicArray.Size();
+	cout << "\ndelete First index :\n";
 	MyDynamicArray.PrintList();
 
 	system("pause>0");

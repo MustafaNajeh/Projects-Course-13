@@ -108,7 +108,6 @@ public:
 		_Size = 0;
 		//OriginalArray = _TempArray;
 		
-		//ما فائدة التيمبلت الثانية ؟؟
 	}
 
 	bool DeleteItemAt(int index) {
@@ -122,9 +121,10 @@ public:
 			_TempArray[i] = OriginalArray[i];
 		}
 
-		for (int i = index + 1; i < _Size+1; i++) {
-			_TempArray[i-1] = OriginalArray[i];
+		for (int i = index + 1; i < _Size + 1; i++) {
+			_TempArray[i - 1] = OriginalArray[i];
 		}
+		// my me;
 		/*for (int i = 0; i < _Size; i++) {
 			if (i != index && i != (index + 1)) {
 				_TempArray[i] = OriginalArray[i];
@@ -140,6 +140,16 @@ public:
 		OriginalArray = _TempArray;
 		return true;
 	}
+
+	void DeleteLastIndex() {
+		if (_Size > 0)
+			_Size--;
+	}
+
+	void DeleteFirstIndex() {
+		DeleteItemAt(0);
+	}
+
 
 };
 
