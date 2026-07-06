@@ -168,7 +168,24 @@ public:
 		return true;
 	}
 
+	bool InsertAt(int index, T value) {
+		if (index > _Size || index < 0)
+			return false;
+		_Size++;
+		_TempArray = new T[_Size];
 
+		for (int i = 0; i < index; i++) {
+			_TempArray[i] = OriginalArray[i];
+		}
+		_TempArray[index] = value;
+		for (int i = index + 1; i < _Size; i++) {
+			_TempArray[i] = OriginalArray[i - 1];
+		}
+
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+		return true;
+	}
 
 
 
