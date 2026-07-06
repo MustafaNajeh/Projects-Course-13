@@ -177,7 +177,9 @@ public:
 		for (int i = 0; i < index; i++) {
 			_TempArray[i] = OriginalArray[i];
 		}
+
 		_TempArray[index] = value;
+
 		for (int i = index + 1; i < _Size; i++) {
 			_TempArray[i] = OriginalArray[i - 1];
 		}
@@ -187,9 +189,31 @@ public:
 		return true;
 	}
 
+	bool InsertBefor(int index, T value) {
+		if (index < 1)
+			return InsertAt(0, value);
+		else
+			return InsertAt(index - 1, value);
+	}
 
+	bool InsertAfter(int index, T value) {
+		
+		if (index >= _Size)
+			return InsertAt(_Size - 1, value);
+		else
+			return InsertAt(index + 1, value);
 
+	}
 
+	void  InsertAtBeginning(T value) {
+			InsertAt(0, value);
+	}
 
+	void InsertAtEnd(T value) {
+		//_Size++;
+		////OriginalArray[_Size-1] = value;
+		//SetItem(_Size - 1, value);
+		InsertAt(_Size , value);
+	}
 };
 
