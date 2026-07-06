@@ -4,7 +4,7 @@ using namespace std;
 template <class T>
 class clsDynamicArray
 {
-	
+
 protected:
 	int _Size;
 	T* _TempArray;
@@ -81,13 +81,13 @@ public:
 	void Revers() {
 		int Counter = 1;
 		int temp = 0;
-		for (int i = 0; i < (_Size / 2) ; i++) {
+		for (int i = 0; i < (_Size / 2); i++) {
 			temp = OriginalArray[i];
 			OriginalArray[i] = OriginalArray[_Size - Counter];
 			OriginalArray[_Size - Counter] = temp;
 			Counter++;
 		}
-	
+
 		//abouhadhud 
 		/*_TempArray = new T[_Size];
 
@@ -101,13 +101,13 @@ public:
 	}
 
 	void clear() {
-		
+
 		//_TempArray = new T[0];
 		delete[] OriginalArray;
 		OriginalArray = nullptr;
 		_Size = 0;
 		//OriginalArray = _TempArray;
-		
+
 	}
 
 	bool DeleteItemAt(int index) {
@@ -149,6 +149,29 @@ public:
 	void DeleteFirstIndex() {
 		DeleteItemAt(0);
 	}
+
+	int Find(T Item) {
+		for (int i = 0; i < _Size; i++) {
+			if (OriginalArray[i] == Item) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	bool DeleteItem(T Item) {
+		int index = Find(Item);
+		if (index == -1) {
+			return false;
+		}
+		DeleteItemAt(index);
+		return true;
+	}
+
+
+
+
+
 
 
 };
