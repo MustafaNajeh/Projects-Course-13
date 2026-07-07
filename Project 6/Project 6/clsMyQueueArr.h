@@ -5,7 +5,7 @@ using namespace std;
 template <class T>
 class clsMyQueueArr
 {
-private:
+protected:
 	clsDynamicArray<T> MyQueue;
 public:
 	void push(T value) {
