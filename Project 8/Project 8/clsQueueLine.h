@@ -138,6 +138,8 @@ public:
 	void PrintTicketLineRTL() {
 		if (QueueLine.empty()) {
 			cout << "\n\t\t\t\t Tickets : No Tickets";
+			return;
+
 		}
 		queue <clsTicket> Temp = QueueLine;
 		cout << "\n\t\t\t\t Tickets : ";
@@ -151,6 +153,8 @@ public:
 	void PrintTicketLineLTR() {
 		if (QueueLine.empty()) {
 			cout << "\n\t\t\t\t Tickets : No Tickets";
+			return;
+
 		}
 
 		queue <clsTicket> Temp = QueueLine;
@@ -169,11 +173,14 @@ public:
 	}
 
 	void PrintAllTickets() {
-		cout << "\n\n\t\t\t\t\t\t---Tickets---\n";
 
 		if (QueueLine.empty()) {
 			cout << "\n\n\t\t\t\t\t ---No Tickets---\n";
+			return;
 		}
+		else 
+		cout << "\n\n\t\t\t\t\t\t---Tickets---\n";
+
 		queue <clsTicket> Temp = QueueLine;
 
 		while (!Temp.empty()) {
